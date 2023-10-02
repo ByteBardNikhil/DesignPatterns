@@ -2,21 +2,31 @@ package Creational_Patterns;
 
 public class Singleton {
 
+    public static void main(String[] args) {
+        SingletonImplement s1 = SingletonImplement.getInstance();
+        SingletonImplement s2 = SingletonImplement.getInstance();
+
+        if (s1 == s2) {
+            System.out.println("Same Object Created");
+        }
+        else
+            System.out.println("Object are different");
+    }
+
 }
 
 class SingletonImplement {
 
     private static SingletonImplement instance;
 
-    private SingletonImplement()
-    {
-        
+    private SingletonImplement() {
     }
-    public static SingletonImplement getInstance()
-    {
-        if(instance==null)
-            instance=new SingletonImplement();
-            return instance;
+
+    public static SingletonImplement getInstance() {
+        if (instance == null) {
+            instance= new SingletonImplement();
+        }
+        return instance;
     }
 }
 
@@ -32,4 +42,4 @@ Lazy Initialization: The Singleton instance is often created lazily, meaning it'
 Global Access Point: A public static method (often named getInstance()) is provided to access the Singleton instance. This method is responsible for creating the instance if it doesn't exist or returning the existing instance.
 
 
-*/
+ */
